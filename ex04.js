@@ -17,5 +17,3 @@ console.log(
     " Mức cân tối thiểu: " +
     mucCanToiThieu
 );
-
-// Mức cân tối thiểu = Số lẻ của chiều cao (tính bằng cm) x 8 rồi chia 10
