@@ -14,16 +14,22 @@ multiply(7, 8);
 //Định nghĩa hàm với ba tham số a,b,c
 function findMin(a, b, c) {
   let min = a; //giả sử min là a
-  if (b < min) {
-    min = b;
-  } else {
-    min = c;
-  }
+  if (b < min) min = b;
+  if (c < b) min = c;
   console.log("Số nhỏ nhất là: ", min);
 }
 
-findMin(3, 5, 1);
+findMin(3, 2, 1);
 findMin(10, 125, 8);
+
+//Cách 2 để tìm Min - dùng hàm math.min
+function findMin2(a, b, c) {
+  let min = Math.min(a, b, c);
+  console.log("Số nhỏ nhất là: ", min);
+}
+
+findMin2(3, 2, 1);
+findMin2(10, 125, 8);
 
 //Bài 3:
 
@@ -49,10 +55,9 @@ getTopstudent(
   8.0
 );
 
-function tinhLaiSuat (principal, rate, year) {
-    total = principal + (principal*rate*year)/100;
-    console.log("Tổng tiền sau khi tính lãi: ", total);
+function tinhLaiSuat(principal, rate, year) {
+  total = principal + (principal * rate * year) / 100;
+  console.log("Tổng tiền sau khi tính lãi: ", total);
 }
 
 tinhLaiSuat(10000000, 5, 3);
-
