@@ -10,6 +10,19 @@ multiply(3, 5);
 multiply(7, 8);
 
 //Bài 2
+function findMin(a, b, c) {
+  let min = a;
+  if (b < min) {
+    min = b;
+  } else {
+    min = c;
+  }
+  console.log("Số nhỏ nhất là: ", min);
+}
+//Nhận xét: Đoạn code trên có một lỗi logic. Cụ thể, trong phần else, nó gán giá trị của c cho min mà không kiểm tra xem c có thực sự nhỏ hơn min hay không.
+// Điều này có thể dẫn đến việc min không phải là số nhỏ nhất trong ba số a, b, và c.
+
+// Sửa lại như sau:
 
 //Định nghĩa hàm với ba tham số a,b,c
 function findMin(a, b, c) {
@@ -57,7 +70,14 @@ getTopstudent(
 
 function tinhLaiSuat(principal, rate, year) {
   total = principal + (principal * rate * year) / 100;
+  // Biến total chưa khai báo bằng let hoặc const, nên sẽ trở thành biến toàn cục (global variable) → dễ gây lỗi trong chương trình lớn.
   console.log("Tổng tiền sau khi tính lãi: ", total);
 }
 
 tinhLaiSuat(10000000, 5, 3);
+// sửa lại
+function tinhLaiSuat2(principal, rate, year) {
+  let total = principal + (principal * rate * year) / 100;
+  // Biến total được khai báo với từ khóa let, nên chỉ có phạm vi trong hàm này → an toàn hơn.
+  console.log("Tổng tiền sau khi tính lãi: ", total);
+}
